@@ -1,0 +1,20 @@
+{
+  "id": "webwaka-suite-pos",
+  "name": "Suite Pos",
+  "version": "0.1.0",
+  "type": "suite",
+  "description": "Point of Sale suite for retail and commerce",
+  "capabilities": [],
+  "dependencies": [],
+  "maintainers": [
+    {
+      "name": "ChangerPlanet Team",
+      "email": "changerplanet@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChangerPlanet/webwaka-suite-pos"
+  },
+  "license": "MIT"
+}
