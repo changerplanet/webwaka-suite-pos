@@ -2,15 +2,41 @@
   "name": "webwaka-suite-pos",
   "version": "0.1.0",
   "description": "Point of Sale suite for retail and commerce",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node index.js"
+    "dev": "vite --host 0.0.0.0 --port 5000",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 5000"
   },
-  "keywords": [],
+  "keywords": [
+    "pos",
+    "offline-first",
+    "pwa"
+  ],
   "author": "ChangerPlanet Team",
   "license": "MIT",
   "dependencies": {
-    "express": "^5.2.1"
+    "@hookform/resolvers": "^5.2.2",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
+    "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-react": "^5.1.2",
+    "dexie": "^4.2.1",
+    "dexie-react-hooks": "^4.2.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-hook-form": "^7.71.1",
+    "react-router-dom": "^7.12.0",
+    "serve": "^14.2.5",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "uuid": "^13.0.0",
+    "vite": "^7.3.1",
+    "workbox-window": "^7.4.0",
+    "zod": "^4.3.5",
+    "zustand": "^5.0.10"
   }
 }

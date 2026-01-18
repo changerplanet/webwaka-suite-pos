@@ -3,9 +3,59 @@
   "name": "Suite Pos",
   "version": "0.1.0",
   "type": "suite",
-  "description": "Point of Sale suite for retail and commerce",
-  "capabilities": [],
-  "dependencies": [],
+  "description": "Point of Sale suite for retail and commerce - Offline-first, Mobile-first PWA",
+  "capabilities": [
+    "pos:sale.create",
+    "pos:sale.void",
+    "pos:receipt.view",
+    "pos:receipt.generate",
+    "pos:shift.open",
+    "pos:shift.close",
+    "pos:shift.xreport",
+    "pos:shift.zreport",
+    "pos:inventory.adjust",
+    "pos:cash.movement",
+    "pos:approval.grant",
+    "pos:reports.view",
+    "pos:settings.edit"
+  ],
+  "dependencies": [
+    "webwaka-core-identity",
+    "webwaka-core-permissions",
+    "webwaka-core-audit",
+    "webwaka-core-receipts",
+    "webwaka-core-payments"
+  ],
+  "features": {
+    "offlineFirst": true,
+    "pwa": true,
+    "mobileFirst": true,
+    "vatRate": 0.075,
+    "currency": "NGN",
+    "cashRounding": [5, 10]
+  },
+  "paymentMethods": [
+    {
+      "id": "CASH",
+      "label": "Cash",
+      "offlineAllowed": true
+    },
+    {
+      "id": "BANK_TRANSFER",
+      "label": "Bank Transfer",
+      "offlineAllowed": true
+    },
+    {
+      "id": "CARD",
+      "label": "Card",
+      "offlineAllowed": false
+    },
+    {
+      "id": "MOBILE",
+      "label": "Mobile Money",
+      "offlineAllowed": false
+    }
+  ],
   "maintainers": [
     {
       "name": "ChangerPlanet Team",

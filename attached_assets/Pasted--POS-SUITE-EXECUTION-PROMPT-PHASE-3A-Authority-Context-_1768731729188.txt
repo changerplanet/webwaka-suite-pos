@@ -1,0 +1,207 @@
+✅ POS SUITE — EXECUTION PROMPT (PHASE 3A)
+
+🔐 Authority & Context
+
+You are executing Phase 3A — POS Suite Implementation of the WebWaka Modular Rebuild.
+
+All governance, registry, CI/CD, and core services are COMPLETE and LOCKED:
+	•	Module Registry exists and is enforced
+	•	Core services implemented and stable:
+	•	webwaka-core-identity
+	•	webwaka-core-permissions
+	•	webwaka-core-audit
+	•	webwaka-core-receipts
+	•	webwaka-core-payments
+	•	CI/CD is active
+	•	Vercel Preview + Production deployments are live
+	•	Demo mode is NOT ALLOWED
+	•	Mobile-first, Offline-first, PWA-first is MANDATORY
+
+You must not change any core service or registry behavior.
+
+⸻
+
+🧠 Implementation Platform (MANDATORY)
+	•	Platform: Replit
+	•	Account: Replit-01
+	•	Repository: webwaka-suite-pos
+	•	GitHub Org: ChangerPlanet
+	•	Deployment Target: Vercel project already linked
+	•	Branching:
+	•	Feature branches only
+	•	PR → Preview
+	•	Merge → Production
+
+⸻
+
+🧱 OSS-FIRST REQUIREMENT (NON-NEGOTIABLE)
+
+You must use the approved OSS stack for POS wherever applicable.
+
+✅ Approved POS OSS Stack (LOCKED)
+
+Capability	OSS Tool	Notes
+POS UI foundation	Vendure Admin UI patterns	UI inspiration only, not backend
+Offline-first storage	Dexie.js (IndexedDB)	❌ localStorage is forbidden
+PWA	Workbox	Background sync required
+State	Zustand	Lightweight, offline-friendly
+Forms	React Hook Form	Touch-first UX
+Validation	Zod	Must align with core services
+QR	qrcode	For receipts
+Printing (future-safe)	ESC/POS-compatible abstraction	Interface only
+
+❌ You must not invent custom offline systems if OSS exists
+❌ You must not fork core logic
+❌ You must not embed payment logic
+
+⸻
+
+🎯 POS SUITE SCOPE (STRICT)
+
+You are building ONLY the POS Suite.
+
+The POS Suite MUST:
+	•	Consume core services
+	•	Declare its capabilities in module.manifest.json
+	•	Be installable/removable via the registry
+	•	Work fully offline for cash + transfer
+	•	Never bypass permissions or identity
+	•	Emit audit events for every sensitive action
+
+⸻
+
+🧩 PHASE 3A — POS IMPLEMENTATION SCOPE
+
+3A.1 — POS Core (Offline-First Sales)
+
+Deliverables
+	•	Product search (offline cache)
+	•	Cart management
+	•	Quantity + price calculation
+	•	VAT 7.5% (Nigeria)
+	•	₦5 / ₦10 cash rounding
+	•	IndexedDB persistence
+	•	Resume after refresh / power loss
+
+Rules
+	•	Offline sales must complete with CASH
+	•	No payment gateway calls here
+	•	Use webwaka-core-identity for session resolution
+
+🛑 Stop Condition
+
+A cashier can complete 10 cash sales fully offline, reload the app, reconnect, and all sales sync correctly.
+
+⸻
+
+3A.2 — Payments & Receipts Integration
+
+Integrations
+	•	webwaka-core-payments
+	•	webwaka-core-receipts
+	•	webwaka-core-audit
+
+Supported payment methods
+	•	CASH (offline allowed)
+	•	BANK_TRANSFER (reference + proof upload)
+	•	CARD / MOBILE (online-only, blocked offline)
+
+Receipt Handling
+	•	Generate receipt via core service
+	•	Display QR
+	•	No printing yet (interface only)
+
+🛑 Stop Condition
+
+A completed sale produces a verifiable receipt with QR, and audit logs confirm payment → receipt linkage.
+
+⸻
+
+3A.3 — Shifts, Registers & Reconciliation
+
+Features
+	•	Open shift (location + float)
+	•	Close shift
+	•	X Report (mid-shift)
+	•	Z Report (end-shift)
+	•	Cash reconciliation
+	•	Supervisor approval via permissions service
+
+Audit
+	•	Every shift action must emit audit events
+
+🛑 Stop Condition
+
+A shop can open a shift, sell all day, close the shift, reconcile cash, and produce a Z-report.
+
+⸻
+
+3A.4 — Advanced POS Ops
+
+Features
+	•	Inventory adjustments (damage, theft, correction)
+	•	Cash movements (drawer ↔ safe)
+	•	Supervisor dashboard (read-only)
+	•	Multi-location awareness
+
+Security
+	•	Dual-control enforcement
+	•	No self-approval
+	•	All actions audited
+
+🛑 Stop Condition
+
+A supervisor can audit the entire day’s activity across registers and locations.
+
+⸻
+
+📦 Mandatory Files to Update
+
+You must update the following in webwaka-suite-pos:
+	•	module.manifest.json
+	•	Capabilities (e.g. pos:sale.create)
+	•	Dependencies on core modules
+	•	module.contract.md
+	•	Public interfaces exposed
+	•	CHANGELOG.md
+	•	Semantic versioning
+	•	Tests (≥80% coverage)
+
+⸻
+
+🚫 ABSOLUTE PROHIBITIONS
+
+You must NOT:
+	•	Modify any core repo
+	•	Add demo data or demo bypasses
+	•	Use localStorage
+	•	Hardcode permissions
+	•	Embed payment gateways
+	•	Skip audit logging
+	•	Bypass tenant isolation
+
+⸻
+
+📤 Final Output Requirements
+
+When complete, submit:
+	1.	Completion Report with:
+	•	Features implemented
+	•	OSS used (with justification)
+	•	Stop conditions verified
+	2.	Final commit SHA
+	3.	Vercel Preview URL
+	4.	Known follow-ups (if any)
+
+⸻
+
+🛑 FINAL HARD STOP
+
+Do not proceed to:
+	•	SVM
+	•	MVM
+	•	ParkHub
+
+until Phase 3A POS is explicitly approved.
+
+⸻
