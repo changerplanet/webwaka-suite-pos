@@ -1,0 +1,16 @@
+{
+  "name": "webwaka-suite-pos",
+  "version": "0.1.0",
+  "description": "Point of Sale suite for retail and commerce",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "keywords": [],
+  "author": "ChangerPlanet Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
